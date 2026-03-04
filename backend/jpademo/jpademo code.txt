@@ -1,0 +1,94 @@
+[10:04 AM, 2/6/2026] Shasvath(ALokii): properties :
+[10:04 AM, 2/6/2026] Shasvath(ALokii): spring.datasource.url=jdbc:h2:file:./data/jpademo
+
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driverClassName=org.h2.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+[10:04 AM, 2/6/2026] Shasvath(ALokii): funcontroller :
+
+
+package com.example.jpademo;
+
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/fun")
+public class FunController {
+    private final FunRepository repo;
+    //contructor injection
+    public FunController(FunRepository repo){
+        this.repo=repo;
+    }
+    @PostMapping
+    public Fun addfun(@RequestBody Fun fun){
+        return repo.save(fun);
+    }
+    @GetMapping
+    public List<Fun> getfun(){
+        return repo.findAll();
+    }
+
+}
+[10:04 AM, 2/6/2026] Shasvath(ALokii): funrepository:
+
+package com.example.jpademo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface FunRepository extends JpaRepository<Fun,Long> {
+}
+[10:04 AM, 2/6/2026] Shasvath(ALokii): fun:
+
+
+package com.example.jpademo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Fun {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private long id;
+    private String mike1;
+    private String mike2;
+
+    public Fun(){}//default constructor required by jpa
+    public  Fun(String mike1,String mike2){
+        this.mike2=mike2;
+        this.mike1=mike1;
+    }
+
+    public long getId() {
+        return id;
+    }
+    public void setId(long id){
+        this.id=id;
+    }
+
+    public String getMike1() {
+        return mike1;
+    }
+    public void setMike1(String m1){
+        this.mike1=m1;
+    }
+
+    public String getMike2() {
+        return mike2;
+    }
+    public void setMike2(String m2){
+        this.mike2=m2;
+    }
+
+}

@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #111;
+  color: white;
+}
+
+header {
+  background: #1f1f1f;
+  padding: 15px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.card {
+  background: #1f1f1f;
+  margin: 20px auto;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exclusively HTML5 Elements</title>
+</head>
+<body>
+
+    <header>Site Header</header>
+   <nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+    <main>
+        <section>A specific section of content<p>hi</p></section>
+        <article>A standalone blog post or news story(article)</article>
+        <aside>A sidebar for extra info</aside>
+    </main>
+    <footer>Site Footer</footer>
+
+    <hr>
+
+    <details>
+        <summary>Click to Expand</summary>
+        <p>This is HTML5</p>
+    </details>
+
+    <dialog open>I am a native popup window.</dialog>
+
+    <br>
+
+    <label>Progress:</label>
+    <progress value="100" max="100"></progress>
+    
+    <br>
+    
+    <label>Storage:</label>
+    <meter value="-0.9" min="-1" max="1">70%</meter>
+
+    <hr>
+
+    <video src="video.mp4" controls width="200">Video player
+        <video controls src="movie.mp4">
+  <track kind="subtitles" src="subs_en.vtt" srclang="en" label="English">
+</video>
+    </video>
+    <audio src="audio.mp3" controls>Audio player</audio>
+    
+    <br>
+    
+    <canvas id="myCanvas" width="100" height="50" style="border:1px solid">Canvas for JS drawing</canvas>
+
+    <hr>
+
+    <picture>
+        <source srcset="https://th.bing.com/th/id/OIP.aNOPmSHqM6diGTzlcSlQuAHaEH?w=267&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" media="(min-width: 800px)">
+        <img src="https://th.bing.com/th/id/OIP.aNOPmSHqM6diGTzlcSlQuAHaEH?w=267&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Responsive Image">
+    </picture>
+
+    <figure>
+        <img src="https://th.bing.com/th/id/OIP.aNOPmSHqM6diGTzlcSlQuAHaEH?w=267&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Demo">
+        <figcaption>This is a figure caption.</figcaption>
+    </figure>
+
+    <hr>
+
+    <p>We use <mark>mark</mark> for highlighting text.</p>
+    <p>The meeting is at <time datetime="2026-02-10">10:00 AM</time>.</p>
+    <p>The result of the calculation is: <output>100</output></p>
+
+    <hr>
+
+    <form>
+        <label>Pick a color:</label>
+        <input type="color"> <br><br>
+        
+        <label>Pick a date:</label>
+        <input type="date"> <br><br>
+        
+        <label>Datalist (Suggestions):</label>
+        <input list="tech">
+        <datalist id="tech">
+            <option value="HTML5">
+            <option value="CSS3">
+            <option value="JavaScript">
+        </datalist>
+    </form>
+<hr>
+<ruby>漢 <rt>かん</rt></ruby>
+<p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
+<address>
+  Contact us at: <a href="mailto:support@dev.com">support@dev.com</a><br>
+  123 Code Lane, Tech City
+</address>
+<details>
+  <summary>Read More</summary>
+  <p>This is the extra content that was hidden! It only shows up when you click the summary.</p>
+</details>
+<video width="100%" controls>
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>ThisIsAVeryLongWordThatNeedsToBreak<wbr>RightHereIfTheScreenIsTooSmall.</p>
+</body>
+</html>

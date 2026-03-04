@@ -1,0 +1,97 @@
+html :
+
+<html>
+<head>
+<title>Student Registration</title>
+</head>
+<style>
+body{
+   background-image:url(back.png);
+   background-size:cover;
+	background-repeat: no-repeat;
+   background-position:center;
+   text-align:center
+}
+</style>
+	<body>
+		<img src="https://www.jobsforyoutamizha.com/wp-content/uploads/2021/04/20210310_133949.jpg" alt="NGP" height="210" width="400"><br>
+		<form action="http://localhost:8080/student" method="post" target="result"> <!--target is just a variable name to use it later-->
+			<label for="name">Name : </label>
+			<input type="text" id="name" name="name" placeholder="Enter your name">
+			<br><br>
+
+			<label for="department">Department : </label>
+			<input type="text" id="department" name="dept" placeholder="Enter your Department">
+			<br><br>
+
+			<input type="submit" value="Save"><br>
+			<h1>Students List</h1>
+			<iframe name="result" src="http://localhost:8080/student" width="600" height="200"></iframe>
+		</form>
+	</body> 
+</html>
+
+student controller:
+package com.example.student_registration_api;
+
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController//marks controller as spring rst api
+@RequestMapping("/student")//base url--> every 8080 request will start with this endpint,. so here every method starts with /student
+public class StudentController {
+    private List<StudentModel> db= new ArrayList<>();
+
+
+
+    //handle post request
+    //param extracts form
+    //query parameters from the request
+    @PostMapping
+    public List<StudentModel> post(@RequestParam String name,
+                             @RequestParam String dept){
+        StudentModel student=new StudentModel(name,dept);
+        db.add(student);
+        return db;
+    }
+                                //    @PostMapping
+                                //    public StudentModel post(@RequestBody StudentModel student){
+                                //        db.add(student);
+                                //        return student;
+
+    //GET /students->return all students
+    @GetMapping
+    public List<StudentModel> get(){
+        return db;
+    }
+
+}
+
+
+student model:
+package com.example.student_registration_api;
+
+public class StudentModel {
+    private String name;
+    private String dept;
+    public StudentModel(){          //default constructor
+    }
+    public StudentModel(String name,String dept){       //parameterised constructor
+        this.name=name;
+        this.dept=dept;
+    }
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name=name;
+    }
+    public String getDept(){
+        return dept;
+    }
+    public void setDept(String dept){
+        this.dept=dept;
+    }
+}

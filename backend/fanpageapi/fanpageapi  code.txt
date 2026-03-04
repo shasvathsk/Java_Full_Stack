@@ -1,0 +1,120 @@
+html:
+
+<html>
+
+<head><title>Loki FanClub Registration</title></head>
+<style>
+body{
+	background-image:url(loki.png);
+   background-size:cover;
+	
+   background-position:center;
+background-attachment:fixed;
+   text-align:center;
+color:white
+}
+</style>
+	<body>
+		<h1> Wanna Be One of Us ? Register Now !!</h1><br>
+		<form action="http://localhost:8080/fanpage" method="post" target="result">
+		Name : <input type=text name="name"><br><br>
+		Email : <input type=email name="email"><br><br>
+		Contact Number : <input type=number name="contact"><br><br>
+		Password : <input type=password name="password"><br><br>
+		City : <input type=text name="city"><br><br>
+		PinCode : <input type=number name="pin"><br><br>
+		<input type="submit"><br><br>
+		</form>
+		<iframe src="http://localhost:8080/fanpage" name="result" height="300p" width="600p"></iframe>
+	</body>
+</html>
+
+fanmodel:
+
+package com.example.fanpageapi;
+
+public class FanModel {
+    private String name;
+    private String email;
+    private long contact;
+    private String password;
+    private String city;
+    private int pin;
+
+    FanModel(){}
+    FanModel(String name,String email,long contact,String password,String city,int pin){
+        this.name=name;
+        this.email=email;
+        this.contact=contact;
+        this.password=password;
+        this.city=city;
+        this.pin=pin;
+    }
+
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name=name;
+    }
+    public String getEmail(){
+        return email;
+    }
+    public void setEmail(String email){
+        this.email=email;
+    }
+    public long getContact(){
+        return contact;
+    }
+    public void setContact(long contact){
+        this.contact=contact;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public void setPassword(String password){
+        this.password=password;
+    }
+    public String getCity(){
+        return city;
+    }
+    public void setCity(String city){
+        this.city=city;
+    }
+    public int getPin(){
+        return pin;
+    }
+    public void setPin(int pin){
+        this.pin=pin;
+    }
+}
+
+fancontroller:
+package com.example.fanpageapi;
+
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+@RequestMapping("/fanpage")
+public class FanController {
+    List<FanModel> db=new ArrayList<>();
+    @PostMapping
+    public List<FanModel> put(@RequestParam String name,
+                              @RequestParam String email,
+                              @RequestParam long contact,
+                              @RequestParam String password,
+                              @RequestParam String city,
+                              @RequestParam int pin){
+        FanModel fan = new FanModel(name,email,contact,password,city,pin);
+        db.add(fan);
+        return db;
+    }
+
+    @GetMapping
+    public List<FanModel> get(){
+        return db;
+    }
+}

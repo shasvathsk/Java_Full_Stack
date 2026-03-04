@@ -1,0 +1,102 @@
+
+
+
+1. Go to Spring Initializer (start.spring.io).
+- Set artifact name: jpademo
+- Add dependencies: Spring Web, Spring Data JPA, H2
+Database
+- Download the project zip.
+
+2. Extract the zip file and open the project in
+IntelliJ.
+
+
+3. Create an entity class (name it Fun).
+- This class will represent a table in the database.
+- create 2 fields mike1 and mike2 of string along with auto generating values (@GeneratedValue works like excel auto generation while dragiing through cells for next cell value)
+- create default and parameterised constructors
+
+4.create repository
+package com.example. jpademo;
+
+import org. springframework. data. jpa.repository. JpaRepository;
+
+// JpaRepository<EntityClass, PrimaryKeyType>
+public interface FunRepository extends JpaRepository<Fun, Long> {
+// No code needed! Spring auto-generates save(), findA11(),
+deleteById(), etc.
+}
+
+5.create controller 
+package com.example.jpademo;
+
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/fun")
+public class FunController {
+    private final FunRepository repo;
+    //contructor injection
+    public FunController(FunRepository repo){
+        this.repo=repo;
+    }
+    @PostMapping
+    public Fun addfun(@RequestBody Fun fun){
+        return repo.save(fun);
+    }
+    @GetMapping
+    public List<Fun> getfun(){
+        return repo.findAll();
+    }
+
+}
+
+
+in application properties file:
+spring.application.name=jpademo
+spring.datasource.url=jdbc:h2:file:./data/jpademo
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driverClassName=org.h2.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+check:
+run tomcat server
+
+
+ABOVE SEE OUTPUT IN H2 DB:
+
+application.properties - change this line with this url
+spring.datasource.url=jdbc:h2:mem:jpademo
+
+in browser
+http://localhost:8080/h2-console
+
+thr
+jdbc url : jdbc:h2:mem: jpademo
+
+rest all dont touch j no password / click connect
+
+u will get table ... type SELECT * FROM FUN; in box and
+run
+
+
+for having permenant h2 table database :
+STEP 1:
+Change application properties
+
+spring.datasource.url=jdbc: h2:file :. /data/jpademo; DB CLOSE ON EXIT=FALSE; AUTO_RECONNECT=TRUE
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-5ql=true
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console

@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <title>HTML</title>
+    </head>
+    <script src="app.js" defer></script>
+    <body>
+        <header><h1>Website Logo & Nav</h1></header>
+        <nav><ul><li><a href="#">Home</a></li><li><a href="#">About</a></li></ul></nav>
+        <label>Storage used:</label> <meter value="0.5">80%</meter>
+        <label>File Upload:</label> <progress value="32" max="100"></progress>
+        <br>
+        <details>
+                <summary>Click to see more</summary>
+                <p>Here is the hidden content!</p>
+          </details>
+        <video src="" controls></video>
+        <audio src="" controls></audio>
+          <dialog >This is a native popup window. It is visible because of the 'open' attribute.</dialog><!--need to give "open" inside the starting tag-->
+          
+          <section><h3>Our Services</h3><p>We build apps.</p></section>
+          <article><h2>Blog Title</h2><p>This is a standalone post.</p></article>
+          <aside><p>Check out our related links here.</p></aside>
+          
+           <picture>
+            <source srcset="https://th.bing.com/th/id/OIP.6QR10PcBrsL79JiUNy5iswHaE6?w=89&h=90&c=1&rs=1&qlt=70&r=0&o=7&dpr=1.3&pid=InlineBlock&rm=3" media="(min-width: 600px)">
+            <img src="https://th.bing.com/th/id/OIP.6QR10PcBrsL79JiUNy5iswHaE6?w=89&h=90&c=1&rs=1&qlt=70&r=0&o=7&dpr=1.3&pid=InlineBlock&rm=3" alt="Responsive Demo">
+          </picture>
+
+
+          
+          <pre>
+            Line 1
+                Indented Line 2
+            Line 3
+        </pre>
+          <figure>
+            <img src="https://th.bing.com/th/id/OIP.p0hYLAKzwCsgZ0mfEKibVQHaG-?w=151&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Profile">
+            <figcaption>User Profile Avatar v1.0</figcaption>
+        </figure>
+
+        <output name="result">Current Score: 10</output>
+<p>Search results for <mark>HTML5</mark> are shown below.</p>
+
+
+
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+  Your browser does not support the HTML5 canvas tag.
+</canvas>
+        <svg width="200" height="200" style="border: 1px solid #ccc;">
+  <g stroke="black" stroke-width="2">
+    <rect x="10" y="10" width="100" height="100" fill="skyblue" />
+    
+    <circle cx="60" cy="60" r="30" fill="orange" />
+    
+    <path d="M 150 10 L 190 190 L 10 190 Z" fill="none" stroke="green" />
+  </g>
+  
+  <text x="10" y="150" font-family="Arial" font-size="20" fill="purple">SVG Text</text>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+
+          <h1>h</h1>
+          <h2>h</h2>
+          <h3>a</h3>
+          <h4>a</h4>
+          <h5>a</h5>
+          <h6>a</h6>
+
+          <p>paragraph</p>
+          <a href="www.google.com">Google</a>
+          <img src="" alt="alternate text" width=90 height=90>  
+          <br>
+          <hr>
+          <ul>
+            <li>a</li>
+            <li>b</li>
+          </ul>
+          <ol>
+            <li>a</li>
+            <li>b</li>
+          </ol>
+        
+          
+          
+          
+
+         
+
+
+
+        <table border="1" style="width:100%; border-collapse: collapse;">
+  <caption>Professional Employee Data 2026</caption>
+  <thead>
+    <tr>
+      <th colspan="2">Employee Information</th>
+      <th>Role</th>
+      <th>Contact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- First employee -->
+    <tr>
+      <td rowspan="2" align="center">
+        <img src="https://via.placeholder.com/40" alt="Avatar"><br>
+        ID: 001
+      </td>
+      <td>John Doe</td>
+      <td>Full Stack Dev</td>
+      <td>john@example.com</td>
+    </tr>
+    <tr>
+      <td>Lead Designer</td>
+      <td>UI/UX Dept</td>
+      <td>design@example.com</td>
+    </tr>
+
+    <!-- Second employee -->
+    <tr>
+      <td align="center">
+        <img src="https://via.placeholder.com/40" alt="Avatar"><br>
+        ID: 002
+      </td>
+      <td>Jane Smith</td>
+      <td>DevOps</td>
+      <td>jane@example.com</td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td colspan="3" scope="row">3 Roles Active in System</td>
+    </tr>
+  </tfoot>
+</table><br>
+
+<div style="border: 2px solid blue; padding: 10px;">This is a div box.</div><br>
+<p>This is a paragraph with a <span style="color: red; font-weight: bold;">red word</span> inside a span.</p>
+<br>
+
+          <form action="/submit" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            Password: <input type="password" placeholder="Password">
+            Email: <input type="email" placeholder="name@email.com">
+            Number: <input type="number" min="1" max="100">
+            Phone: <input type="tel" placeholder="123-456-7890">
+            URL: <input type="url" placeholder="https://example.com">
+            Search: <input type="search" placeholder="Search keywords...">
+            Checkbox: <input type="checkbox" id="opt1"> <label for="opt1">Check me</label>
+            Radio: <input type="radio" name="group1" value="1"> Option 1
+            Dropdown: <select><option>Option A</option><option>Option B</option></select>
+            Datalist (Auto-suggest): <input list="items"><datalist id="items"><option value="Apple"></datalist>
+            Range (Slider): <input type="range" min="0" max="10">
+            File Upload: <input type="file" accept="image/*">
+            Color Picker: <input type="color">
+            Date: <input type="date">
+            Time: <input type="time">
+            Date & Time: <input type="datetime-local">
+            Month: <input type="month">
+            Week: <input type="week">
+            <button type="submit">send</button>
+            Submit Button: <input type="submit" value="Send Form">
+            Reset Button: <input type="reset" value="Clear All">
+            Standard Button: <button type="button">Click Me</button>
+            Image Button: <input type="image" src="submit-icon.png" alt="Submit">
+            Textarea: <textarea placeholder="Enter your bio..."></textarea>
+        </form>
+
+        
+          <footer><p>&copy; 2026 My Portfolio</p></footer>
+    </body>
+</html>

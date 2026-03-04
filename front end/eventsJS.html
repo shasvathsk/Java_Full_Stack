@@ -1,0 +1,65 @@
+<html>
+
+<h1>DOM manipulation</h1>
+<h1><u>Events </u></h1>
+<hr>
+<h1 id="h1" style="color:red">jananayagan</h1><hr>
+<img id="vijay" src="https://tinyurl.com/3xf42avy" height=300 width=500><hr>
+<div>
+	<p id="myid">5</p><hr>
+	<button onClick="react()"> click</button><br><br><hr>
+	<button onClick="thala()"> change h1</button><br><br><hr>
+	<button onClick="image()"> change image</button><br><br><hr>
+
+	<input type="text" id="text" onkeyup="call()">   <button onClick="show()"> submit </button><br><br>
+	
+	<h1 id="result"></h1>
+	<hr>
+	<input type="number" id="x" ><br> 
+	<input type="number" id="y" ><br>
+	<input type="number" id="z" ><br>
+	<button onClick="product()"> product </button><br>
+	<h1 id="res"></h1><hr>
+</div>
+<script>
+	function react(){
+		alert("button clicked")
+	}
+
+	function thala(){
+		document.getElementById("h1").innerHTML="gbu";
+	}
+
+	function image(){
+		document.getElementById("vijay").src="https://tinyurl.com/3pewr6wf"
+	}
+
+	function call(){
+		let text=document.getElementById("text").value
+		console.log(text)
+	}
+
+	function show(){
+		let text=document.getElementById("text").value
+		console.log(text)
+		//document.write(text)
+		document.getElementById("result").innerHTML=text
+	}
+
+	function product(){
+		let x=document.getElementById("x").value
+		let y=document.getElementById("y").value
+		let z=document.getElementById("z").value
+		document.getElementById("res").innerHTML=x*y*z
+	}
+
+	
+		console.log("new day")
+	document.write("new day")
+	let x=document.getElementById("myid").innerHTML
+	console.log(x+5)
+
+
+
+</script>
+</html>

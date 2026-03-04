@@ -1,0 +1,23 @@
+<div id="vault">
+  <h2>Enter the Secret Code to Unlock Your Gift</h2>
+  <input type="text" id="passcode" placeholder="Our special date...">
+  <button onclick="unlock()">Unlock</button>
+</div>
+
+<div id="secret-content" style="display:none;">
+  <h1>Happy Valentine's Day! ❤️</h1>
+  <p>Your real gift is: [Insert Gift Card Code or 'Check your door tomorrow']</p>
+  <img src="your-favorite-photo.jpg" alt="Us">
+</div>
+
+<script>
+function unlock() {
+  const code = document.getElementById('passcode').value;
+  if(code === '1402') { // Example code
+    document.getElementById('vault').style.display = 'none';
+    document.getElementById('secret-content').style.display = 'block';
+  } else {
+    alert('Try again, babe!');
+  }
+}
+</script>

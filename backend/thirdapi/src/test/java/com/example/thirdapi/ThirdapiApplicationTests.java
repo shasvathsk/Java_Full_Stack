@@ -1,0 +1,13 @@
+package com.example.thirdapi;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ThirdapiApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

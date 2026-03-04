@@ -1,0 +1,12 @@
+function remindmelater(callback){
+    setTimeout(()=>{
+        callback();
+    },5000);
+}
+
+function remind(){
+    console.log("reminder:Drink water!");
+    alert("Reminder: Drink water!");
+}
+
+remindmelater(remind);

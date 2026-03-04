@@ -1,0 +1,28 @@
+<html>
+
+<head><title>Loki FanClub Registration</title></head>
+<style>
+body{
+	background-image:url(loki.png);
+   background-size:cover;
+	
+   background-position:center;
+background-attachment:fixed;
+   text-align:center;
+color:white
+}
+</style>
+	<body>
+		<h1> Wanna Be One of Us ? Register Now !!</h1><br>
+		<form action="http://localhost:8080/fanpage" method="post" target="result">
+		Name : <input type=text name="name"><br><br>
+		Email : <input type=email name="email"><br><br>
+		Contact Number : <input type=number name="contact"><br><br>
+		Password : <input type=password name="password"><br><br>
+		City : <input type=text name="city"><br><br>
+		PinCode : <input type=number name="pin"><br><br>
+		<input type="submit"><br><br>
+		</form>
+		<iframe src="http://localhost:8080/fanpage" name="result" height="300p" width="600p"></iframe>
+	</body>
+</html>

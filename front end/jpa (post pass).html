@@ -1,0 +1,33 @@
+<html>
+<body>
+<form action="http://localhost:8080/fun" method="post" target="result">
+Mike1 : <input type=text name="mike1"><br>
+Mike2 : <input type=text name="mike2"><br>
+<input type="submit" >
+</form> 
+<a href="http://localhost:8080/h2-console">view</a>
+</body>
+</html>
+
+
+
+
+user:postgres
+officialMY123.
+lokialmighty
+officialPOSTGRES123.
+
+
+
+
+
+
+package com.example.LifeAudit1;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public  interface LifeAuditRepository extends JpaRepository<Note,Long> {
+    
+}
